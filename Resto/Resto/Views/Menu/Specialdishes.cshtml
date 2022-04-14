@@ -1,0 +1,84 @@
+﻿@model Resto.Data.GeneralModel
+@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="side-nav" class="sidenav">
+    <a href="javascript:void(0)" id="side-nav-close">&times;</a>
+
+    <div class="sidenav-content">
+        <p>
+            Kuncen WB1, Wirobrajan 10010, DIY
+        </p>
+        <p>
+            <span class="fs-16 primary-color">(+68) 120034509</span>
+        </p>
+        <p>info@yourdomain.com</p>
+    </div>
+</div>
+<div id="side-search" class="sidenav">
+    <a href="javascript:void(0)" id="side-search-close">&times;</a>
+    <div class="sidenav-content">
+        <form action="">
+
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="input-group-text red lighten-3" id="basic-text1">
+                        <i class="fas fa-search text-grey" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+</div>	<div id="canvas-overlay"></div>
+
+		<!-- Special Dishes Section -->
+<section id="gtco-special-dishes" class="bg-grey section-padding">
+    <div class="container">
+        <div class="section-content">
+            <div class="heading-section text-center">
+                <span class="subheading">
+                    Specialties
+                </span>
+                <h2>
+                    Special Dishes
+                </h2>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-5 col-md-6 align-self-center py-5">
+                    <h2 class="special-number">01.</h2>
+                    <div class="dishes-text">
+                        <h3><span>@Model.Menues.ElementAt(3).Category_name</span><br> @Model.Menues.ElementAt(3).Meal_name</h3>
+                        <p class="pt-3">@Model.Menues.ElementAt(3).Meal_info</p>
+                        <h3 class="special-dishes-price">$@Decimal.Round(@Model.Menues.ElementAt(3).Meal_price,2, MidpointRounding.AwayFromZero)</h3>
+                        <a href="#" class="btn-primary mt-3">book a table</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center mt-4 mt-md-0">
+                    <img src="@Url.Content(Model.Menues.ElementAt(3).Meal_image)" alt="" class="img-fluid shadow w-100">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-5 col-md-6 align-self-center order-2 order-md-1 mt-4 mt-md-0">
+                    <img src="@Url.Content(Model.Menues.ElementAt(4).Meal_image)" alt="" class="img-fluid shadow w-100">
+                </div>
+                <div class="col-lg-5 offset-lg-2 col-md-6 align-self-center order-1 order-md-2 py-5">
+                    <h2 class="special-number">02.</h2>
+                    <div class="dishes-text">
+                        <h3><span>@Model.Menues.ElementAt(4).Category_name</span><br> @Model.Menues.ElementAt(3).Meal_name</h3>
+                        <p class="pt-3">@Model.Menues.ElementAt(4).Meal_info</p>
+                        <h3 class="special-dishes-price">$@Decimal.Round(@Model.Menues.ElementAt(4).Meal_price,2, MidpointRounding.AwayFromZero)</h3>
+                        <a href="#" class="btn-primary mt-3">book a table <span><i class="fa fa-long-arrow-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
